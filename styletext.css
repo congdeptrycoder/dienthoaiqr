@@ -43,6 +43,7 @@ a {
 /* tiêu đề */
 header {
     display: flex;
+    position: relative;
     justify-content: space-between;
     padding: 12 50px;
     height: 70px;
@@ -1123,27 +1124,46 @@ header {
         cursor: pointer;
     }
 
-    /* Menu adjustments */
+    /* Main menu adjustments */
     .menu {
         display: none;
-        width: 100%;
-        order: 4;
+        /* Hide by default */
+        position: absolute;
+        top: 110%;
+        left: 3%;
+        width: 60%;
+        background: white;
+        border-radius: 10px;
+        border-color: transparent;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        order: 3;
     }
 
     .menu.active {
         display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-        background: #332E2E;
     }
 
     .menu>li {
         width: 100%;
         padding: 12px 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+    }
+
+    .menu>li>a {
+        padding-left: 10px;
+        pointer-events: none;
+        /* Ngăn click trên thẻ a */
+    }
+
+    .submenu {
+        display: none !important;
+        /* Force ẩn submenu */
+    }
+
+    .menu-toggle.active+.menu {
+        display: block;
     }
 
     .menu>li:hover {
@@ -1229,19 +1249,35 @@ header {
         object-fit: fill;
     }
 
-    .dienthoai_noibat_content_item {
-        flex: none;
-        width: 100%;
+    .dienthoai_noibat_content_tittle {
+        display: block;
+    }
+
+    .dienthoai_noibat_content_tittle ul {
+        display: flex;
+    }
+
+    .dienthoai_noibat_content_tittle ul li {
+        padding: 6px 6px;
+        border: 2px solid #AB6866;
+        border-radius: 20px;
+
+    }
+
+    .dienthoai_noibat_content_tittle ul li a {
+        color: white;
+        font-size: 13px;
     }
 
     /* Special offers section */
     .chuongtrinh_uudai_content_items_contain {
         flex-wrap: wrap;
-        gap: 15px;
     }
 
     .chuongtrinh_uudai_content_items_contain img {
         width: 48%;
+        aspect-ratio: 1/1;
+        margin-bottom: 10px;
     }
 
     /* Footer */
