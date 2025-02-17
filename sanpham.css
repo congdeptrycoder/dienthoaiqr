@@ -1,0 +1,148 @@
+.status_path {
+    margin-left: 30px;
+    margin-top: 30px;
+    color: white;
+}
+
+.status_path a {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+
+.product_content {
+    display: flex;
+    margin-top: 30px;
+}
+
+.product_content_left {
+    width: 45%;
+}
+
+.product_content_left_big_img img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.product_content_left_small_img {
+    width: 45%;
+    margin-top: 15px;
+    display: flex;
+    flex: 0 0 19%;
+    overflow: hidden;
+    position: relative;
+    max-height: 100px;
+}
+
+.product_content_left_small_img_btn {
+    position: absolute;
+    top: 35%;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    background-color: transparent;
+    left: 0;
+    right: 0;
+}
+
+.product_content_left_small_img_btn i {
+    width: 15px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E56662;
+    opacity: 0.3;
+    transition: all 0.3s ease-out;
+}
+
+.product_content_left_small_img_btn i:hover {
+    cursor: pointer;
+    opacity: 0.6
+}
+
+.product_content_left_small_img_content {
+    position: relative;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+}
+
+.product_content_left_small_img_content img {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 75px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.product_content_right {
+    font-size: 14px;
+    width: 45%;
+    padding-left: 30px;
+}
+
+.product_content_right_name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.product_content_right_cauhinh {
+    font-size: 18px;
+    color: white;
+
+}
+
+.product_content_right_cauhinh p {
+    margin-top: 10px;
+}
+
+.product_content_right_cauhinh img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product_content_right_cauhinh a {
+    color: yellow;
+}
+
+.product_content_right_cauhinh_bonho p {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: 2px solid grey;
+    border-radius: 3px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+
+.product_content_right_cauhinh_bonho p:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.product_content_right_cauhinh img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.product_content_right_price {
+    font-size: 24px;
+    color: yellow;
+}
+
+.product_content_right_price sup {
+    padding-right: 10px;
+    padding-left: 1px;
+}
+
+.product_content_right_price span.old {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.product_content_right_price sup.old {
+    color: grey;
+}
