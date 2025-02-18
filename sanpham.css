@@ -146,3 +146,57 @@
 .product_content_right_price sup.old {
     color: grey;
 }
+
+@media screen and (max-width: 1120px) {
+    .product_content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product_content_left,
+    .product_content_right {
+        width: 90%;
+        padding-left: 0;
+    }
+
+
+
+    .product_content_left_big_img img {
+        width: 100%;
+        height: auto;
+
+    }
+
+    .product_content_left_small_img {
+        width: 100%;
+        max-height: none;
+
+    }
+
+    .product_content_left_small_img_content img {
+        width: 60px;
+        height: 70px;
+    }
+
+    .product_content_right_name {
+        font-size: 18px;
+    }
+
+    .product_content_right_price {
+        font-size: 20px;
+    }
+
+    .product_content_right_cauhinh {
+        font-size: 16px;
+    }
+
+    .product_content_right_cauhinh img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .product_content_right_cauhinh_bonho p {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

@@ -129,3 +129,76 @@
     cursor: pointer;
     border: 3px solid #E56662;
 }
+
+@media screen and (min-width:500.2px) and (max-width: 1120px) {
+
+    /* Adjust product grid layout */
+    .product_list_content_item {
+        width: calc(90% / 3);
+        /* Change from 5 items per row to 4 */
+        margin: 5px;
+    }
+
+    /* Adjust product info text sizes */
+    .product_list_content_item_info .product_name {
+        font-size: 18px;
+        /* Slightly smaller product name */
+    }
+
+    .product_list_content_item_info p {
+        font-size: 13px;
+        /* Slightly smaller general text */
+    }
+
+    .product_list_content_item_info p.product_price,
+    .product_list_content_item_info p.old_product_price {
+        font-size: 13px;
+        /* Slightly smaller price */
+    }
+
+    .product_list_content_item_info .old_product_price {
+        font-size: 16px;
+        /* Slightly smaller old price */
+    }
+
+    /* Adjust VIP info badges */
+    .product_list_content_item_info_vip p {
+        font-size: 11px;
+        /* Smaller text in feature badges */
+        padding: 1px;
+    }
+
+    /* Adjust heading margins */
+    .product_list h1 {
+        margin: 20px;
+    }
+
+    /* Adjust "See more" button */
+    .product_list_more p {
+        width: 45%;
+        /* Wider button for better touch targets */
+        padding: 8px 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    /* Adjust product grid layout */
+    .product_list_content_item {
+        width: calc(90% / 2);
+        /* Change from 5 items per row to 4 */
+        margin: 5px;
+    }
+
+    .product_list_content_item_info p.product_price,
+    .product_list_content_item_info p.old_product_price {
+        font-size: 14px;
+        /* Slightly smaller price */
+    }
+
+    .product_list_more p {
+        width: 55%;
+        /* Wider button for better touch targets */
+        padding: 8px 15px;
+    }
+}
