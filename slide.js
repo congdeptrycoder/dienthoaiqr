@@ -130,11 +130,10 @@ function togglePopup() {
 
 }
 // Thêm vào cuối file
+
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
-    console.log(menuToggle);
-    console.log(menu);
     menuToggle.addEventListener('click', function (e) {
         e.stopPropagation();
         menu.classList.toggle('active');

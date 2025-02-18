@@ -1133,7 +1133,7 @@ header {
         left: 3%;
         width: 60%;
         background: white;
-        border-radius: 10px;
+
         border-color: transparent;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         z-index: 1000;
@@ -1146,15 +1146,19 @@ header {
 
     .menu>li {
         width: 100%;
-        padding: 12px 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0px 15px;
+        height: 60%;
+        border: 0.5px dotted white;
         position: relative;
     }
 
     .menu>li>a {
         padding-left: 10px;
-
         /* Ngăn click trên thẻ a */
+    }
+
+    .menu>li>a i {
+        top: 35%;
     }
 
     .submenu {
