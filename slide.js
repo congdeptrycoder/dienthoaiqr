@@ -133,7 +133,8 @@ function togglePopup() {
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
-
+    console.log(menuToggle);
+    console.log(menu);
     menuToggle.addEventListener('click', function (e) {
         e.stopPropagation();
         menu.classList.toggle('active');
@@ -154,12 +155,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Ngăn click vào menu item có submenu
-    document.querySelectorAll('.menu > li').forEach(item => {
-        item.addEventListener('click', function (e) {
-            if (window.innerWidth <= 1120) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-        });
-    });
+    // document.querySelectorAll('.menu > li').forEach(item => {
+    //     item.addEventListener('click', function (e) {
+    //         if (window.innerWidth <= 1120) {
+    //             e.preventDefault();
+    //             e.stopPropagation();
+    //         }
+    //     });
+    // });
 });

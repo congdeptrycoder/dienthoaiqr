@@ -1153,7 +1153,7 @@ header {
 
     .menu>li>a {
         padding-left: 10px;
-        pointer-events: none;
+
         /* Ngăn click trên thẻ a */
     }
 
@@ -1164,10 +1164,6 @@ header {
 
     .menu-toggle.active+.menu {
         display: block;
-    }
-
-    .menu>li:hover {
-        background-color: #9B8B8B;
     }
 
     .submenu {
