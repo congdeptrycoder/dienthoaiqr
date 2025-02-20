@@ -105,7 +105,7 @@
 }
 
 .product_content_right_cauhinh a {
-    color: yellow;
+    color: #ffd754;
 }
 
 .product_content_right_cauhinh_bonho p {
@@ -130,7 +130,8 @@
 
 .product_content_right_price {
     font-size: 24px;
-    color: yellow;
+    color: #E56662;
+
 }
 
 .product_content_right_price sup {
@@ -183,7 +184,7 @@
     }
 
     .product_content_right_price {
-        font-size: 20px;
+        font-size: 23px;
     }
 
     .product_content_right_cauhinh {

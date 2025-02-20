@@ -1178,6 +1178,7 @@ header {
         margin-top: 10px;
     }
 
+
     /* Other menu (search and icons) */
     .other_menu {
         order: 3;
@@ -1223,10 +1224,7 @@ header {
     }
 
     .slide_content_right {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        display: none;
     }
 
     .slide_content_right li {
@@ -1245,16 +1243,18 @@ header {
 
     .banner_ngang_1 img {
         width: 100%;
-        height: 80px;
+        height: 40px;
         object-fit: fill;
     }
 
     .dienthoai_noibat_content_tittle {
         display: block;
+
     }
 
     .dienthoai_noibat_content_tittle ul {
         display: flex;
+        margin-top: 5px;
     }
 
     .dienthoai_noibat_content_tittle ul li {
@@ -1278,6 +1278,10 @@ header {
         width: 48%;
         aspect-ratio: 1/1;
         margin-bottom: 10px;
+    }
+
+    .dienthoai_noibat_content_item {
+        flex: 0 0 48%;
     }
 
     /* Footer */
