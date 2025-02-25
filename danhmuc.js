@@ -39,7 +39,7 @@ function getParameterByName(name, url) {
 // Lấy giá trị tham số
 var category = getParameterByName('category');
 var subcategory = getParameterByName('subcategory');
-var http = "http://smartphonequanrau.onlinewebshop.net/api/";
+var http = "https://smartphonequanrau.onlinewebshop.net/api/";
 // Cập nhật tiêu đề
 var titleElement = document.getElementById('page-title');
 if (subcategory) {
