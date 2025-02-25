@@ -22,6 +22,7 @@
     width: calc(90% / 5);
     float: left;
     padding: 20px 5px;
+    margin: 10px 0px;
     border-radius: 10px;
     position: relative;
     background: white;
@@ -96,6 +97,8 @@
 
 .product_list_content_item_img img {
     width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
     background: white;
 }
 

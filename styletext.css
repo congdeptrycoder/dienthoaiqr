@@ -40,6 +40,51 @@ a {
     margin: auto;
 }
 
+/* Màn hình loading */
+#loading-screen {
+    position: fixed;
+    font-size: 16px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Nền trong suốt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    /* Đảm bảo hiển thị trên tất cả các phần tử khác */
+}
+
+/* Loader animation */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #CD6D62;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Văn bản */
+#loading-screen p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+}
+
 /* tiêu đề */
 header {
     display: flex;
@@ -105,6 +150,7 @@ header {
     position: absolute;
     left: 0px;
     background: #332E2E;
+    transition: background-color 0.3s ease;
 }
 
 .menu>li:hover .submenu {
@@ -131,10 +177,12 @@ header {
 
 .menu>li:hover {
     background-color: #9B8B8B;
-    border-radius: 0px;
     cursor: pointer;
 }
 
+.menu>li:hover i {
+    background-color: #9B8B8B;
+}
 
 .submenu {
     display: none;
@@ -583,9 +631,9 @@ header {
 .slide_sanpham_sale_content_item_info span {
     margin-left: 5px;
     padding: 1px 4px 1px 4px;
-    background-color: #E56662;
+    background-color: #FF9913;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     border-radius: 2px;
 }
 
@@ -606,6 +654,8 @@ header {
 
 .slide_sanpham_sale_content_item_info li:nth-child(5) {
     font-size: 16px;
+    font-weight: bold;
+    color: #E56662;
 }
 
 .slide_sanpham_sale_content_item_info>li:nth-child(4)>span:first-child {
@@ -689,6 +739,16 @@ header {
     color: white;
     font-size: 14px;
     border-radius: 2px;
+}
+
+.dienthoai_noibat_content_item_info li:nth-child(4) span {
+    background: #CD6D62;
+
+}
+
+.dienthoai_noibat_content_item_info li:nth-child(5) {
+    color: #E56662;
+    font-weight: bold;
 }
 
 .dienthoai_noibat_content_item_info li:nth-child(4) a {
@@ -1103,103 +1163,188 @@ header {
 
     /* Header layout */
     header {
-        padding: 12px 5px;
         height: auto;
-        flex-wrap: wrap;
+        padding: 10px 0px;
     }
 
+    /* Ẩn menu chính */
+    .menu {
+        display: none;
+        /* Ẩn menu mặc định */
+        position: absolute;
+        top: 70px;
+        /* Đặt menu ngay dưới header */
+        left: 0;
+        width: 100%;
+        /* Chiếm toàn bộ chiều ngang */
+        background: #332E2E;
+        flex-direction: column;
+        /* Chuyển menu thành dạng dọc */
+        height: auto;
+        /* Chiều cao tự động */
+        z-index: 20;
+    }
+
+    /* Hiện menu-toggle */
+    .menu-toggle {
+        cursor: pointer;
+        display: flex;
+        /* Hiện nút toggle */
+        justify-content: center;
+        align-items: center;
+        order: 1;
+        width: 10%;
+        font-size: 25px;
+        background: #332E2E;
+        color: white;
+    }
+
+    .menu-toggle i {
+        background: #332E2E;
+    }
+
+    /* Khi menu được kích hoạt (thêm class 'active' bằng JS sau) */
+    .menu.active {
+        display: flex;
+        /* Hiện menu khi có class active */
+    }
+
+    /* Điều chỉnh các mục menu */
+    .menu>li {
+        width: 100%;
+        /* Mỗi mục chiếm toàn bộ chiều ngang */
+        padding: 15px 30px;
+        /* Tăng khoảng cách cho dễ nhấn */
+        font-size: 17px;
+        /* Căn trái nội dung */
+        border-bottom: 1px solid #444;
+        /* Thêm đường viền phân cách */
+    }
+
+    /* Icon trong menu */
+    .menu li i {
+        background: #332E2E;
+        padding-left: 10px;
+        /* Điều chỉnh vị trí icon */
+    }
+
+    /* Submenu khi hiển thị */
+    .menu>li:hover .submenu {
+        display: none;
+        /* Tắt hover mặc định để dùng JS hoặc cách khác */
+    }
+
+    .menu>li .submenu.active {
+        display: block;
+        /* Hiện submenu khi có class active */
+        position: relative;
+        /* Đặt submenu trong luồng bình thường */
+        top: 0;
+        width: 100%;
+        border: none;
+        padding: 10px 20px;
+        background: #444;
+        /* Đổi màu nền để phân biệt */
+    }
+
+    .submenu {
+        grid-template-columns: 1fr;
+        /* Chuyển thành 1 cột duy nhất */
+        gap: 10px;
+        /* Giảm khoảng cách */
+    }
+
+    .submenu>li.item>a {
+        background: #444;
+        color: white;
+        font-size: 17px;
+    }
+
+    .submenu>li.category>a {
+        background: #444;
+        color: white;
+
+    }
+
+    .submenu>li>a {
+        background: #444;
+
+        /* Đảm bảo có thể nhấp */
+    }
+
+    .submenu>.category {
+        grid-column: 1;
+        /* Không chiếm toàn bộ hàng nữa */
+        font-size: 20px;
+        margin-bottom: 3px;
+        background: #444;
+    }
+
+    .submenu>.item {
+        width: 100%;
+        /* Chiếm toàn bộ chiều ngang */
+        text-align: left;
+        padding: 10px 0;
+        background: #444;
+    }
+
+    .submenu>.item>a img {
+        display: inline-block;
+        /* Đặt ảnh cạnh text thay vì trên */
+        width: 30px;
+        height: 30px;
+        object-fit: fill;
+        margin: 0px 10px;
+        vertical-align: middle;
+    }
+
+    /* Điều chỉnh logo và other_menu */
     .logo {
-        width: 15%;
+        width: 10%;
+        /* Tăng kích thước logo một chút */
         order: 2;
     }
 
-    .menu-toggle {
-        display: block;
-        order: 1;
-        width: 10%;
-        text-align: center;
-        background: transparent;
-        font-size: 20px;
-        color: white;
-        cursor: pointer;
-    }
-
-    /* Main menu adjustments */
-    .menu {
-        display: none;
-        /* Hide by default */
-        position: absolute;
-        top: 110%;
-        left: 3%;
-        width: 60%;
-        background: white;
-
-        border-color: transparent;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        order: 3;
-    }
-
-    .menu.active {
-        display: block;
-    }
-
-    .menu>li {
+    .logo img {
         width: 100%;
-        padding: 0px 15px;
-        height: 60%;
-        border: 0.5px dotted white;
-        position: relative;
+        height: auto;
+        object-fit: fill;
     }
 
-    .menu>li>a {
-        padding-left: 10px;
-        /* Ngăn click trên thẻ a */
-    }
-
-    .menu>li>a i {
-        top: 35%;
-    }
-
-    .submenu {
-        display: none !important;
-        /* Force ẩn submenu */
-    }
-
-    .menu-toggle.active+.menu {
-        display: block;
-    }
-
-    .submenu {
-        position: static;
-        width: 100%;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 10px;
-        margin-top: 10px;
-    }
-
-
-    /* Other menu (search and icons) */
     .other_menu {
         order: 3;
-        width: 70%;
-        margin-left: auto;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        background: #332E2E;
+        /* Tăng chiều rộng để chứa các phần tử */
     }
 
     .other_menu>li:first-child {
-        width: 80%;
+        width: 70%;
+        /* Giảm chiều rộng thanh tìm kiếm */
+    }
+
+    .search-wrapper input {
+        font-size: 13px;
     }
 
     .other_menu>li:nth-child(2),
     .other_menu>li:nth-child(3) {
-        width: 10%;
-        text-align: center;
+        width: 15%;
+        /* Điều chỉnh kích thước icon */
     }
 
-    .other_menu a img {
-        width: 80%;
+    .other_menu>li:nth-child(2) img {
+        width: 25px;
         height: auto;
     }
+
+    .other_menu>li:nth-child(3) img {
+        width: 22px;
+        height: auto;
+    }
+
 
     /* Slide content */
     .slide_qc {
@@ -1306,4 +1451,20 @@ header {
     }
 
 
+}
+
+@media screen and (max-width: 350px) {
+    .dienthoai_noibat_content_item {
+        width: calc(90%/2);
+
+
+    }
+
+    .dienthoai_noibat_content_item_info li:nth-child(4) {
+        font-size: 12px;
+    }
+
+    .dienthoai_noibat_content_item_info li:nth-child(4) span {
+        font-size: 9px;
+    }
 }

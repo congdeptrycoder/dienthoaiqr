@@ -129,37 +129,32 @@ function togglePopup() {
     }
 
 }
+// Ẩn màn hình loading khi trang tải xong
+window.addEventListener('load', function () {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        loadingScreen.style.display = 'none';
+    }
+});
 // Thêm vào cuối file
 
-document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    menuToggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        menu.classList.toggle('active');
-        this.classList.toggle('active');
-        console.log("checked");
-        // Ẩn tất cả submenu khi menu mobile hiện
-        document.querySelectorAll('.submenu').forEach(sub => {
-            sub.style.display = 'none';
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    menuToggle.addEventListener("click", function () {
+        menu.classList.toggle("active"); // Thêm/xóa class 'active' để hiện/ẩn menu
+    });
+
+    // Xử lý submenu (nếu muốn bật/tắt bằng cách nhấn)
+    const menuItems = document.querySelectorAll(".menu > li");
+    menuItems.forEach(item => {
+        item.addEventListener("click", function (e) {
+            const submenu = item.querySelector(".submenu");
+            if (submenu) {
+
+                submenu.classList.toggle("active"); // Bật/tắt submenu
+            }
         });
     });
-
-    // Đóng menu khi click ra ngoài
-    document.addEventListener('click', function (e) {
-        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
-            menu.classList.remove('active');
-            menuToggle.classList.remove('active');
-        }
-    });
-
-    // Ngăn click vào menu item có submenu
-    // document.querySelectorAll('.menu > li').forEach(item => {
-    //     item.addEventListener('click', function (e) {
-    //         if (window.innerWidth <= 1120) {
-    //             e.preventDefault();
-    //             e.stopPropagation();
-    //         }
-    //     });
-    // });
 });

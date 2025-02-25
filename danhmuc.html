@@ -11,14 +11,18 @@
 </head>
 
 <body>
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <p>Wait!!!</p>
+    </div>
     <!-- CHAT BUTTON-->
     <div id="chatButton" class="chat-button blink" onclick="togglePopup()">
         <i id="chaticon" class="fa-regular fa-comment fa-2xl"></i>
     </div>
     <p class="text_chat">Liên hệ với chúng tôi tại đây!</p>
     <div class="chat-popup" id="chatPopup">
-        <a href="#"><img src="tài nguyên/logo_zalo.png" alt="Zalo"> Zalo</a>
-        <a href="#"><img src="tài nguyên/logo_fb.png" alt="Điện thoại"> Facebook</a>
+        <a href="#"><img src="tai_nguyen/logo_zalo.png" alt="Zalo"> Zalo</a>
+        <a href="#"><img src="tai_nguyen/logo_fb.png" alt="Điện thoại"> Facebook</a>
     </div>
     <!--KHU VỰC ĐẦU TRANG-->
     <header>
@@ -26,49 +30,67 @@
             <a href="index.html"><img src="tai_nguyen/logoweb.png" alt="Mua điện thoại tại Smartphone QR"></a>
         </div>
         <div class="menu">
-            <li><a href="danhmuc.html"><i class="fa-solid fa-mobile-screen"></i>Điện thoại</a></li>
-            <li><a href="danhmuc.html"><i class="fa-solid fa-laptop"></i>Laptop</a> </li>
-            <li><a href="danhmuc.html"><i class="fa-solid fa-tablet-screen-button"></i>Máy tính bảng</a> </li>
-            <li><a href="danhmuc.html"><i class="fa-solid fa-headphones-simple"></i>Phụ kiện</a>
+            <li><i class="fa-solid fa-mobile-screen"></i><a href="danhmuc.html?category=ĐIỆN THOẠI">Điện thoại</a></li>
+            <li><i class="fa-solid fa-laptop"></i><a href="danhmuc.html?category=LAPTOP">Laptop</a></li>
+            <li><i class="fa-solid fa-tablet-screen-button"></i><a href="danhmuc.html?category=MÁY TÍNH BẢNG">Máy tính
+                    bảng</a></li>
+            <li><i class="fa-solid fa-headphones-simple"></i>Phụ kiện
                 <ul class="submenu">
-                    <li class="category"><a href="danhmuc.html">Phụ kiện máy tính</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/chuot_head.png">Chuột có dây/Chuột
-                            Bluetooth</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/tainghe_head.png">Tai nghe</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/micro_head.png">Micro</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/balo_head.png">Balo/Túi chống sốc</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/office_head.png">Phần mềm bản quyền</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/pkmt_head.png">Xem thêm...</a>
-                    <li class="category"><a href="">Phụ kiện điện thoại</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/pindp_head.jpg">Pin dự phòng</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/oplung_head.jpg">Ốp lưng</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/daysac_head.jpg">Dây sạc</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/pkdt_head.jpg">Xem thêm...</a>
-                    <li class="category"><a href="danhmuc.html">Loa</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/loajbl_head.jpg">JBL</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/loakeo_head.jpg">Loa kéo</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/loamt_head.png">Loa cho máy tính để bàn
-                        </a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/loamini_head.jpg">Loa Bluetooth cầm
-                            tay</a>
-                    <li class="category"><a href="danhmuc.html">Các sản phẩm khác</a>
+                    <li class="category"><a href="danhmuc.html?category=Phụ kiện máy tính">Phụ kiện máy tính</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Các loại chuột"><img
+                                src="san_pham/chuot_head.png">Chuột có dây/Chuột Bluetooth</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Tai nghe"><img
+                                src="san_pham/tainghe_head.png">Tai nghe</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Micro"><img
+                                src="san_pham/micro_head.png">Micro</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Các loại balo"><img
+                                src="san_pham/balo_head.png">Balo/Túi chống sốc</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Cáp sạc máy tính"><img
+                                src="san_pham/office_head.png">Cáp sạc máy tính</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Phụ kiện máy tính"><img
+                                src="san_pham/pkmt_head.png">Xem tất cả...</a></li>
+                    <li class="category"><a href="danhmuc.html?category=Phụ kiện điện thoại">Phụ kiện điện thoại</a>
+                    </li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Pin dự phòng"><img
+                                src="san_pham/pindp_head.jpg">Pin dự phòng</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Ốp lưng"><img
+                                src="san_pham/oplung_head.jpg">Ốp lưng</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Dây sạc"><img
+                                src="san_pham/daysac_head.jpg">Dây sạc</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Phụ kiện điện thoại"><img
+                                src="san_pham/pkdt_head.jpg">Xem tất cả...</a></li>
+                    <li class="category"><a href="danhmuc.html?category=Loa">Loa</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Loa Bluetooth"><img
+                                src="san_pham/loamini_head.jpg">Loa Bluetooth</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Loa kéo"><img
+                                src="san_pham/loakeo_head.jpg">Loa kéo</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Loa cho máy tính"><img
+                                src="san_pham/loamt_head.png">Loa cho máy tính để bàn</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Loa"><img
+                                src="tai_nguyen/logoweb.png">Xem tất cả...</a></li>
+                    <li class="category"><a href="danhmuc.html?category=PHỤ KIỆN">CÁC PHỤ KIỆN KHÁC</a>
+                    </li>
                 </ul>
             </li>
-            <li><a href="danhmuc.html"><i class="fa-solid fa-stopwatch"></i>Đồng hồ</a> </li>
-            <li><a href="danhmuc.html"><i class="fa-solid fa-screwdriver-wrench"></i>Sửa chữa</a>
+            <li><i class="fa-solid fa-stopwatch"></i><a href="danhmuc.html?category=Đồng hồ">Đồng hồ</a></li>
+            <li><i class="fa-solid fa-screwdriver-wrench"></i>Sửa chữa
                 <ul class="submenu">
-                    <li class="category"><a href="">Sửa chữa điện thoại</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/suapin_head.jpg">Thay pin chính hãng</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/sualung_head.jpg">Thay kính lưng</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/suamanhinh__head.jpg">Thay màn hình</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/suacamera_head.jpg">Sửa camera/FaceID</a>
-                    <li class="item"><a href="danhmuc.html"><img src="san_pham/thaykinh_head.jpg">Tất cả dịch vụ...</a>
+                    <li class="category"><a href="danhmuc.html?category=Sửa chữa điện thoại">Sửa chữa điện thoại</a>
+                    </li>
+                    <li class="item"><a href="danhmuc.html?category=Sửa chữa&subcategory=Thay pin chính hãng"><img
+                                src="san_pham/suapin_head.jpg">Thay pin chính hãng</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Sửa chữa&subcategory=Thay kính lưng"><img
+                                src="san_pham/sualung_head.jpg">Thay kính lưng</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Sửa chữa&subcategory=Thay màn hình"><img
+                                src="san_pham/suamanhinh__head.jpg">Thay màn hình</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Sửa chữa&subcategory=Sửa camera/FaceID"><img
+                                src="san_pham/suacamera_head.jpg">Sửa camera/FaceID</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Sửa chữa&subcategory=Tất cả dịch vụ..."><img
+                                src="san_pham/thaykinh_head.jpg">Tất cả dịch vụ...</a></li>
                 </ul>
             </li>
-
             <li style="color:#E56662;"><i class="fa-solid fa-phone-volume" style="color: #E56662;"></i>Hotline:
                 0210.650.50.50</li>
-
         </div>
         <div class="menu-toggle">
             <i class="fa-solid fa-bars"></i>
@@ -87,339 +109,14 @@
     </header>
     <!--KHU VỰC DANH MỤC-->
     <section class="product_list">
-        <h1>ĐIỆN THOẠI</h1>
+        <h1 id="page-title"></h1>
         <div class="container">
             <div class="product_list_fill">
 
             </div>
-            <div class="product_list_content">
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ - Duyệt hồ sơ chỉ trong 9 phút</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
+            <div class="product_list_content" id="product-list">
 
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
-                    <div class="product_list_content_item_img">
-                        <img src="san_pham/goiydt/iphone15.jpg">
-                    </div>
-                    <div class="product_list_content_item_info">
-                        <p class="product_name">iPhone 15</p>
-                        <div class="product_list_content_item_info_vip">
-                            <p>Super Retina XDR </p>
-                            <p>6.1 inch </p>
-                            <p>Chip A15 Bionic</p>
-                        </div>
-                        <p class="product_price">16.900.000<sup>đ</sup></p>
-                        <p class="old_product_price"><span>22.000.000</span><sup>đ</sup></p>
-
-                        <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
-                        <p> Trả góp 0% - Trả trước 0đ</p>
-                    </div>
-                </div>
-                <div class="product_list_content_item">
+                <!-- <div class="product_list_content_item">
                     <div class="product_list_content_item_img">
                         <img src="san_pham/goiydt/iphone15.jpg">
                     </div>
@@ -435,9 +132,9 @@
                         <p> Bảo hành 24 tháng - Bảo hành cả rơi vỡ</p>
                         <p> Trả góp 0% - Trả trước 0đ</p>
                     </div>
-                </div>
+                </div>  -->
             </div>
-            <div class="product_list_more">
+            <div id="load-more" class="product_list_more">
                 <p>Xem thêm sản phẩm khác</p>
             </div>
         </div>
@@ -532,6 +229,7 @@
         </div>
     </section>
     <script src="slide.js"></script>
+    <script src="danhmuc.js"></script>
 </body>
 
 </html>
