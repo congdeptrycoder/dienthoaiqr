@@ -55,3 +55,123 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+var titleElement = document.getElementById('pathsp');
+var dmpath = document.getElementById('pathdm');
+//Hiển thị sản phẩm dựa vào id
+// Lấy tham số id từ URL
+const urlParams = new URLSearchParams(window.location.search);
+const productId = Number(urlParams.get('id'));
+const pathdm = decodeURIComponent(urlParams.get('title'));
+if (productId) {
+    fetch(`https://smartphonequanrau.kesug.com/api/getsp.php?id=${productId}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Sản phẩm không tồn tại');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const product = data.products[0];
+            // Hiển thị thông tin sản phẩm
+            console.log('Thông tin sản phẩm:', product);
+            titleElement.textContent = product.tensanpham;
+            dmpath.textContent = pathdm;
+            dmpath.href = `danhmuc.html?category=${pathdm}`;
+            const productcontent = document.getElementById('product_content');
+            const productsmall = document.getElementById('product_list_small');
+            function formatCurrency(amount) {
+                return Number(amount).toLocaleString("vi-VN"); // Định dạng giá theo tiền Việt Nam
+            }
+            function renderProducts() {
+                productcontent.innerHTML = "";
+
+                const productDivleft = document.createElement("div");
+                productDivleft.classList.add("product_content_left");
+                productDivleft.innerHTML = `
+                <div class="product_content_left_big_img">
+                        <img src="${product.src}" alt="${product.tensanpham}">
+                    </div>
+                `;
+                productcontent.appendChild(productDivleft);
+                const productDivright = document.createElement("div");
+                productDivright.classList.add("product_content_right");
+                if (product.mausac == "") {
+                    productDivright.innerHTML = `
+                 <div class="product_content_right_name">
+                        <h1>${product.tensanpham}</h1>
+                    </div>
+                    <div class="product_content_right_price">
+                        <p>${formatCurrency(product.giamoi)}<sup>đ</sup><span class="old">${formatCurrency(product.giacu)}</span><sup class="old">đ</sup></p>
+                    </div>
+                    <div class="product_content_right_cauhinh">
+                        <p>Tình trạng: <span class="tinhtrang" style="font-weight: bold; color:#9dc183">CÒN HÀNG
+                            </span>( Liên hệ tại góc trái màn hình để biết
+                            cơ
+                            sở còn hàng gần bạn nhất )</p>
+                        <p>Thời gian bảo hành:<span style="font-weight: bold; color:#ffd754;"> Bảo hành 24 tháng - Bảo
+                                hành cả rơi vỡ</span></p>
+                        <a href="">(Thông tin chi tiết)</a>
+                        <p>Giao hàng tận nơi - Giao trong ngày đối với khách hàng tại Phú Thọ</p>
+                        <p style="font-style:italic; font-size: 16px;">Liên hệ ngay để nhận được tư vấn và thời gian
+                            giao
+                            hàng chính xác</p>
+                        <p style="font-weight: bold; color:#E56662">Hotline: 0210.650.50.50</p>
+
+                    </div>
+                    `;
+                } else {
+                    productDivright.innerHTML = `
+                 <div class="product_content_right_name">
+                        <h1>${product.tensanpham}</h1>
+                    </div>
+                    <div class="product_content_right_price">
+                        <p>${formatCurrency(product.giamoi)}<sup>đ</sup><span class="old">${formatCurrency(product.giacu)}</span><sup class="old">đ</sup></p>
+                    </div>
+                    <div class="product_content_right_cauhinh">
+                        <p>Tại Quân Râu đang có các cấu hình sau: <i>( lướt xuống cuối để đến cơ sở gần nhất hoặc bấm vào giỏ hàng để xem hướng dẫn đặt hàng )<i></p>
+                        <p>Màu sắc:</p>
+                        <img src="tai_nguyen/coloriphone/trang.png">
+                        <img src="tai_nguyen/coloriphone/den.png">
+                        <img src="tai_nguyen/coloriphone/do.png">
+                        <img src="tai_nguyen/coloriphone/hong.png">
+                        <img src="tai_nguyen/coloriphone/xanhla.png">
+                        <img src="tai_nguyen/coloriphone/xanhduong.png">
+                        <p>Bộ nhớ:</p>
+                        <div class="product_content_right_cauhinh_bonho">
+                            <p>128GB</p>
+                            <p>256GB</p>
+                            <p>512GB</p>
+                        </div>
+                        <p>Tình trạng: <span class="tinhtrang" style="font-weight: bold; color:#9dc183">CÒN HÀNG
+                            </span>( Liên hệ tại góc trái màn hình để biết
+                            cơ
+                            sở còn hàng gần bạn nhất )</p>
+                        <p>Thời gian bảo hành:<span style="font-weight: bold; color:#ffd754;"> Bảo hành 24 tháng - Bảo
+                                hành cả rơi vỡ</span></p>
+                        <a href="">(Thông tin chi tiết)</a>
+                        <p>Giao hàng tận nơi - Giao trong ngày đối với khách hàng tại Phú Thọ</p>
+                        <p style="font-style:italic; font-size: 16px;">Liên hệ ngay để nhận được tư vấn và thời gian
+                            giao
+                            hàng chính xác</p>
+                        <p style="font-weight: bold; color:#E56662">Hotline: 0210.650.50.50</p>
+
+                    </div>
+                    `;
+                };
+                productcontent.appendChild(productDivright);
+                productsmall.innerHTML = `
+                <img src="${product.src}" alt="iPhone 13 128GB">
+                    <img src="img_san_pham/iphone13/1.jpg" alt="iPhone 13 128GB">
+                    <img src="img_san_pham/iphone13/2.jpg" alt="iPhone 13 128GB">
+                    <img src="img_san_pham/iphone13/3.jpg" alt="iPhone 13 128GB">
+                    <img src="img_san_pham/iphone13/4.jpg" alt="iPhone 13 128GB">
+                    <img src="img_san_pham/iphone13/5.jpg" alt="iPhone 13 128GB">
+                    `;
+            }
+            renderProducts();
+        })
+        .catch(error => {
+            console.error('Lỗi khi lấy thông tin sản phẩm:', error);
+            alert('Không thể tải thông tin sản phẩm!');
+        });
+}

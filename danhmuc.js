@@ -39,7 +39,7 @@ function getParameterByName(name, url) {
 // Lấy giá trị tham số
 var category = getParameterByName('category');
 var subcategory = getParameterByName('subcategory');
-var http = "https://smartphonequanrau.onlinewebshop.net/api/";
+var http = "https://smartphonequanrau.kesug.com/api/";
 // Cập nhật tiêu đề
 var titleElement = document.getElementById('page-title');
 if (subcategory) {
@@ -55,6 +55,24 @@ if (subcategory) {
 } else {
     titleElement.textContent = 'Danh sách sản phẩm'; // Tiêu đề mặc định
 }
+async function fetchData() {
+    try {
+        // Gọi API một lần để thiết lập cookie
+        await fetch("https://smartphonequanrau.kesug.com/api/danhmuc.php");
+
+        // Chờ một chút để cookie được thiết lập
+        setTimeout(async () => {
+            const response = await fetch("https://smartphonequanrau.kesug.com/api/loa.php?i=1");
+            const data = await response.json();
+            console.log(data);
+            console.log("1")
+        }, 3000); // Chờ 3 giây
+    } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu:", error);
+    }
+}
+
+fetchData();
 fetch(http)
     .then(response => response.json())
     .then(data => {
@@ -72,9 +90,10 @@ fetch(http)
                 products.slice(0, visibleProducts).forEach(product => {
                     const productDiv = document.createElement("div");
                     productDiv.classList.add("product_list_content_item");
-
+                    // Thêm data-id bằng setAttribute
+                    productDiv.setAttribute("data-id", product.id_sanpham);
                     productDiv.innerHTML = `
-                        <div class="product_list_content_item_img" id="${product.id_sanpham}">
+                        <div class="product_list_content_item_img" >
                             <img src="${product.src}" alt="${product.tensanpham}">
                         </div>
                         <div class="product_list_content_item_info">
@@ -97,6 +116,17 @@ fetch(http)
                 } else {
                     loadMoreBtn.style.display = "none"; // Ẩn nếu không còn sản phẩm
                 }
+                console.log(document.querySelectorAll('.product_list_content_item'));
+                const pageTitle = document.getElementById('page-title')?.textContent.trim();
+                document.querySelectorAll('.product_list_content_item').forEach(item => {
+                    item.addEventListener('click', function () {
+                        const productId = this.getAttribute('data-id');// Lấy ID từ thuộc tính data-id
+                        // Mã hóa tiêu đề để URL hợp lệ
+                        const encodedTitle = encodeURIComponent(pageTitle);
+
+                        window.location.href = `sanpham.html?id=${productId}&title=${encodedTitle}`;
+                    });
+                });
             }
 
             renderProducts(); // Hiển thị sản phẩm ban đầu
@@ -106,6 +136,8 @@ fetch(http)
                 visibleProducts += 15;
                 renderProducts();
             });
+
         }
     })
     .catch(error => console.error("Lỗi:", error));
+//Xem chi tiết sản phẩm

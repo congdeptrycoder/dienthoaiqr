@@ -7,7 +7,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styletext.css">
     <link rel="stylesheet" href="sanpham.css">
-    <title>Smartphone Quân Râu</title>
+    <link rel="icon" type="image/png" href="tai_nguyen/logoweb.png">
+    <title>Chi tiết sản phẩm</title>
 </head>
 
 <body>
@@ -15,10 +16,10 @@
     <div class="chat-button" onclick="togglePopup()">
         <i id="chaticon" class="fa-regular fa-comment fa-2xl"></i>
     </div>
-    <p class="text_chat">Liên hệ với chúng tôi tại đây!</p>
+    <p class="text_chat">ĐẶT HÀNG TẠI ĐÂY!</p>
     <div class="chat-popup" id="chatPopup">
-        <a href="#"><img src="tài nguyên/logo_zalo.png" alt="Zalo"> Zalo</a>
-        <a href="#"><img src="tài nguyên/logo_fb.png" alt="Điện thoại"> Facebook</a>
+        <a href="#"><img src="tai_nguyen/logo_zalo.png" alt="Zalo"> Zalo</a>
+        <a href="#"><img src="tai_nguyen/logo_fb.png" alt="Điện thoại"> Facebook</a>
     </div>
     <!--KHU VỰC ĐẦU TRANG-->
     <header>
@@ -106,14 +107,14 @@
     <!--THANH ĐƯỜNG DẪN-->
     <div class="status_path">
         <i class="fa-solid fa-house"></i><a href="index.html">Trang chủ</a><i class="fa-solid fa-angles-right"></i><a
-            href="danhmuc.html">Điện thoại</a><i class="fa-solid fa-angles-right"></i> <a href="sanpham.html">iPhone 13
-            128GB </a>
+            href="danhmuc.html" id="pathdm">Danh mục</a><i class="fa-solid fa-angles-right"></i> <a href="#"
+            id="pathsp">Sản phẩm</a>
     </div>
     <!--KHU VỰC SẢN PHẨM-->
     <section class="product">
         <div class="container">
-            <div class="product_content">
-                <div class="product_content_left">
+            <div class="product_content" id="product_content">
+                <!-- <div class="product_content_left">
                     <div class="product_content_left_big_img">
                         <img src="img_san_pham/iphone13/big.jpg" alt="iPhone 13 128GB">
                     </div>
@@ -156,14 +157,14 @@
                         <p style="font-weight: bold; color:#E56662">Hotline: 0210.650.50.50</p>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
     <section class="product_small">
         <div class="container">
             <div class="product_content_left_small_img">
-                <div class="product_content_left_small_img_content">
+                <div class="product_content_left_small_img_content" id="product_list_small">
                     <img src="img_san_pham/iphone13/0.jpg" alt="iPhone 13 128GB">
                     <img src="img_san_pham/iphone13/1.jpg" alt="iPhone 13 128GB">
                     <img src="img_san_pham/iphone13/2.jpg" alt="iPhone 13 128GB">

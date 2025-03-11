@@ -26,6 +26,20 @@
     border-radius: 10px;
     position: relative;
     background: white;
+    transition: all 0.3s ease;
+}
+
+.product_list_content_item:hover {
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(207, 207, 207, 0.6), 0 0 8px rgba(250, 247, 247, 0.6);
+}
+
+.product_list_content_item:hover .product_list_content_item_img img {
+    transform: translateY(-10px);
+}
+
+.product_list_content_item:hover p.product_price {
+    color: #E56662;
 }
 
 .product_list_content_item_info {
@@ -60,7 +74,7 @@
     color: #d92d20;
     font-weight: bold;
     font-size: 18px;
-
+    transition: all 0.3s ease;
 }
 
 .product_list_content_item_info>p.old_product_price {
@@ -100,6 +114,7 @@
     aspect-ratio: 1/1;
     object-fit: cover;
     background: white;
+    transition: all 0.3s ease;
 }
 
 .product_list_content_item_img {
