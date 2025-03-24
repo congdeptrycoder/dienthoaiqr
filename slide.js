@@ -129,13 +129,17 @@ function togglePopup() {
     }
 
 }
-// Ẩn màn hình loading khi trang tải xong
-window.addEventListener('load', function () {
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-        loadingScreen.style.display = 'none';
-    }
-});
+// load sản phẩm
+document.querySelectorAll('.slide_sanpham_sale_content_item').forEach(item => {
+    item.addEventListener('click', function () {
+        console.log(item);
+        const productId = this.getAttribute('data-id');// Lấy ID từ thuộc tính data-id
+
+        const encodedTitle = encodeURIComponent('SẢN PHẨM SIÊU SALE');
+
+        window.location.href = `sanpham.html?id=${productId}&title=${encodedTitle}`;
+    })
+})
 // Thêm vào cuối file
 
 document.addEventListener("DOMContentLoaded", function () {

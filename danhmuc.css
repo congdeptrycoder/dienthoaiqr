@@ -4,6 +4,75 @@
     margin-left: 30px;
 }
 
+/* Style cho bộ lọc */
+.product_list_fill {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-group {
+    position: relative;
+    display: inline-block;
+}
+
+.filter-control {
+    padding: 8px 15px;
+    border: 2px solid #E56662;
+    border-radius: 25px;
+    background: white;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    min-width: 200px;
+}
+
+/* Hiển thị dropdown ngay sát dưới ô select */
+.filter-control:focus+.custom-dropdown {
+    display: block;
+}
+
+.custom-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.custom-dropdown option {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.custom-dropdown option:hover {
+    background-color: #f1f1f1;
+}
+
+/* Nút Áp dụng */
+.apply-button {
+    padding: 8px 20px;
+    background-color: #E56662;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: #d45550;
+}
+
 .product_list_content {
     float: left;
     position: relative;
@@ -40,6 +109,13 @@
 
 .product_list_content_item:hover p.product_price {
     color: #E56662;
+}
+
+.product_list_content_item_info p span.sale-badge {
+    background-color: #FFEE8c;
+    font-size: 14px;
+    color: #CD5C5C;
+    padding: 2px;
 }
 
 .product_list_content_item_info {
@@ -170,7 +246,7 @@
 
     .product_list_content_item_info p.product_price,
     .product_list_content_item_info p.old_product_price {
-        font-size: 13px;
+        font-size: 16px;
         /* Slightly smaller price */
     }
 
@@ -210,7 +286,7 @@
 
     .product_list_content_item_info p.product_price,
     .product_list_content_item_info p.old_product_price {
-        font-size: 14px;
+        font-size: 16px;
         /* Slightly smaller price */
     }
 

@@ -95,7 +95,7 @@ if (productId) {
                 productcontent.appendChild(productDivleft);
                 const productDivright = document.createElement("div");
                 productDivright.classList.add("product_content_right");
-                if (product.mausac == "") {
+                if (product.bonho == "") {
                     productDivright.innerHTML = `
                  <div class="product_content_right_name">
                         <h1>${product.tensanpham}</h1>
@@ -108,8 +108,9 @@ if (productId) {
                             </span>( Liên hệ tại góc trái màn hình để biết
                             cơ
                             sở còn hàng gần bạn nhất )</p>
-                        <p>Thời gian bảo hành:<span style="font-weight: bold; color:#ffd754;"> Bảo hành 24 tháng - Bảo
-                                hành cả rơi vỡ</span></p>
+                        <p>Chất lượng sản phẩm: <span style="font-weight: bold; ">${product.chatluong}</span></p>
+                        <a href="">(A+/A/B là gì)</a>
+                        <p>Thời gian bảo hành:<span style="font-weight: bold; color:#ffd754;"> ${product.baohanh}</span></p>
                         <a href="">(Thông tin chi tiết)</a>
                         <p>Giao hàng tận nơi - Giao trong ngày đối với khách hàng tại Phú Thọ</p>
                         <p style="font-style:italic; font-size: 16px;">Liên hệ ngay để nhận được tư vấn và thời gian
@@ -128,26 +129,16 @@ if (productId) {
                         <p>${formatCurrency(product.giamoi)}<sup>đ</sup><span class="old">${formatCurrency(product.giacu)}</span><sup class="old">đ</sup></p>
                     </div>
                     <div class="product_content_right_cauhinh">
-                        <p>Tại Quân Râu đang có các cấu hình sau: <i>( lướt xuống cuối để đến cơ sở gần nhất hoặc bấm vào giỏ hàng để xem hướng dẫn đặt hàng )<i></p>
-                        <p>Màu sắc:</p>
-                        <img src="tai_nguyen/coloriphone/trang.png">
-                        <img src="tai_nguyen/coloriphone/den.png">
-                        <img src="tai_nguyen/coloriphone/do.png">
-                        <img src="tai_nguyen/coloriphone/hong.png">
-                        <img src="tai_nguyen/coloriphone/xanhla.png">
-                        <img src="tai_nguyen/coloriphone/xanhduong.png">
-                        <p>Bộ nhớ:</p>
+                        <p>Bộ nhớ: ${product.bonho}</p>
                         <div class="product_content_right_cauhinh_bonho">
-                            <p>128GB</p>
-                            <p>256GB</p>
-                            <p>512GB</p>
                         </div>
                         <p>Tình trạng: <span class="tinhtrang" style="font-weight: bold; color:#9dc183">CÒN HÀNG
                             </span>( Liên hệ tại góc trái màn hình để biết
                             cơ
                             sở còn hàng gần bạn nhất )</p>
-                        <p>Thời gian bảo hành:<span style="font-weight: bold; color:#ffd754;"> Bảo hành 24 tháng - Bảo
-                                hành cả rơi vỡ</span></p>
+                         <p>Chất lượng sản phẩm: <span style="font-weight: bold; ">${product.chatluong}</span></p>
+                         <a href="">(A+/A/B là gì)</a>
+                        <p>Thời gian bảo hành:<span style="font-weight: bold; color:#ffd754;"> ${product.baohanh}</span></p>
                         <a href="">(Thông tin chi tiết)</a>
                         <p>Giao hàng tận nơi - Giao trong ngày đối với khách hàng tại Phú Thọ</p>
                         <p style="font-style:italic; font-size: 16px;">Liên hệ ngay để nhận được tư vấn và thời gian
@@ -160,12 +151,13 @@ if (productId) {
                 };
                 productcontent.appendChild(productDivright);
                 productsmall.innerHTML = `
-                <img src="${product.src}" alt="iPhone 13 128GB">
-                    <img src="img_san_pham/iphone13/1.jpg" alt="iPhone 13 128GB">
-                    <img src="img_san_pham/iphone13/2.jpg" alt="iPhone 13 128GB">
-                    <img src="img_san_pham/iphone13/3.jpg" alt="iPhone 13 128GB">
-                    <img src="img_san_pham/iphone13/4.jpg" alt="iPhone 13 128GB">
-                    <img src="img_san_pham/iphone13/5.jpg" alt="iPhone 13 128GB">
+                <img src="${product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
                     `;
             }
             renderProducts();

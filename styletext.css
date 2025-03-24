@@ -83,6 +83,7 @@ a {
     margin-top: 20px;
     font-size: 18px;
     color: white;
+
 }
 
 /* tiêu đề */
@@ -575,7 +576,7 @@ header {
     color: #CD6D62;
 }
 
-.slide_sanpham_sale_content_item:hover>a>img {
+.slide_sanpham_sale_content_item:hover>img {
     transform: translateY(-15px);
 
 }
@@ -587,13 +588,13 @@ header {
     border-radius: 4px;
 }
 
-.slide_sanpham_sale_content_item a>img {
+.slide_sanpham_sale_content_item>img {
     width: 100%;
     background-color: white;
     transition: transform 0.4s ease;
 }
 
-.slide_sanpham_sale_content_item a {
+.slide_sanpham_sale_content_item {
     background: white;
     color: black;
 }
@@ -631,16 +632,16 @@ header {
 .slide_sanpham_sale_content_item_info span {
     margin-left: 5px;
     padding: 1px 4px 1px 4px;
-    background-color: #FF9913;
-    color: white;
+    background-color: #FFEE8C;
+    color: #CD5C5C;
     font-size: 13px;
     border-radius: 2px;
+
 }
 
 .slide_sanpham_sale_content_item_info li:nth-child(2) {
     font-size: 17px;
     font-weight: bold;
-
 }
 
 .slide_sanpham_sale_content_item_info li:nth-child(3) {
@@ -743,7 +744,7 @@ header {
 
 .dienthoai_noibat_content_item_info li:nth-child(4) span {
     background: #CD6D62;
-
+    font-weight: bold;
 }
 
 .dienthoai_noibat_content_item_info li:nth-child(5) {

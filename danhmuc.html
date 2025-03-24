@@ -14,7 +14,7 @@
 <body>
     <div id="loading-screen">
         <div class="loader"></div>
-        <p>Wait!!!</p>
+        <p>Chờ xíuu!!!</p>
     </div>
     <!-- CHAT BUTTON-->
     <div id="chatButton" class="chat-button blink" onclick="togglePopup()">
@@ -37,6 +37,26 @@
                     bảng</a></li>
             <li><i class="fa-solid fa-headphones-simple"></i>Phụ kiện
                 <ul class="submenu">
+
+                    <li class="category"><a href="danhmuc.html?category=Phụ kiện điện thoại">Phụ kiện điện thoại</a>
+                    </li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Pin dự phòng"><img
+                                src="san_pham/pindp_head.jpg">Pin dự phòng</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Ốp lưng"><img
+                                src="san_pham/oplung_head.jpg">Ốp lưng</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Dây sạc"><img
+                                src="san_pham/daysac_head.jpg">Dây sạc</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Phụ kiện điện thoại"><img
+                                src="san_pham/pkdt_head.jpg">Xem tất cả...</a></li>
+                    <li class="category"><a href="danhmuc.html?category=Loa">Loa</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Loa Bluetooth"><img
+                                src="san_pham/loamini_head.jpg">Loa Bluetooth</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Loa kéo"><img
+                                src="san_pham/loakeo_head.jpg">Loa kéo</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Loa cho máy tính"><img
+                                src="san_pham/loamt_head.png">Loa cho máy tính để bàn</a></li>
+                    <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Loa"><img
+                                src="tai_nguyen/logoweb.png">Xem tất cả...</a></li>
                     <li class="category"><a href="danhmuc.html?category=Phụ kiện máy tính">Phụ kiện máy tính</a></li>
                     <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Các loại chuột"><img
                                 src="san_pham/chuot_head.png">Chuột có dây/Chuột Bluetooth</a></li>
@@ -50,25 +70,6 @@
                                 src="san_pham/office_head.png">Cáp sạc máy tính</a></li>
                     <li class="item"><a href="danhmuc.html?category=Phụ kiện&subcategory=Phụ kiện máy tính"><img
                                 src="san_pham/pkmt_head.png">Xem tất cả...</a></li>
-                    <li class="category"><a href="danhmuc.html?category=Phụ kiện điện thoại">Phụ kiện điện thoại</a>
-                    </li>
-                    <li class="item"><a href="danhmuc.html?category=Pin dự phòng"><img src="san_pham/pindp_head.jpg">Pin
-                            dự phòng</a></li>
-                    <li class="item"><a href="danhmuc.html?category=Ốp lưng"><img src="san_pham/oplung_head.jpg">Ốp
-                            lưng</a></li>
-                    <li class="item"><a href="danhmuc.html?category=Dây sạc"><img src="san_pham/daysac_head.jpg">Dây
-                            sạc</a></li>
-                    <li class="item"><a href="danhmuc.html?category=Phụ kiện điện thoại"><img
-                                src="san_pham/pkdt_head.jpg">Xem tất cả...</a></li>
-                    <li class="category"><a href="danhmuc.html?category=Loa">Loa</a></li>
-                    <li class="item"><a href="danhmuc.html?category=Loa Bluetooth"><img
-                                src="san_pham/loamini_head.jpg">Loa Bluetooth</a></li>
-                    <li class="item"><a href="danhmuc.html?category=Loa kéo"><img src="san_pham/loakeo_head.jpg">Loa
-                            kéo</a></li>
-                    <li class="item"><a href="danhmuc.html?category=Loa cho máy tính"><img
-                                src="san_pham/loamt_head.png">Loa cho máy tính để bàn</a></li>
-                    <li class="item"><a href="danhmuc.html?category=Loa"><img src="tai_nguyen/logoweb.png">Xem tất
-                            cả...</a></li>
                     <li class="category"><a href="danhmuc.html?category=PHỤ KIỆN">CÁC PHỤ KIỆN KHÁC</a>
                     </li>
                 </ul>
@@ -113,7 +114,29 @@
         <h1 id="page-title"></h1>
         <div class="container">
             <div class="product_list_fill">
+                <!-- Bộ lọc sắp xếp -->
+                <div class="filter-group">
+                    <select id="sort-select" class="filter-control">
+                        <option value="default">Sắp xếp theo</option>
+                        <option value="price-high-low">Giá từ cao xuống thấp</option>
+                        <option value="price-low-high">Giá từ thấp lên cao</option>
+                    </select>
+                </div>
 
+                <!-- Bộ lọc khoảng giá -->
+                <div class="filter-group">
+                    <select id="price-range" class="filter-control">
+                        <option value="all">Tất cả mức giá</option>
+                        <option value="0-1000000">Dưới 1 triệu</option>
+                        <option value="1000000-2000000">1 - 2 triệu</option>
+                        <option value="2000000-5000000">2 - 5 triệu</option>
+                        <option value="5000000-10000000">5 - 10 triệu</option>
+                        <option value="10000000-9999999999">Trên 10 triệu</option>
+                    </select>
+                </div>
+
+                <!-- Nút Áp dụng -->
+                <button id="apply-filters" class="apply-button">Áp dụng</button>
             </div>
             <div class="product_list_content" id="product-list">
 
