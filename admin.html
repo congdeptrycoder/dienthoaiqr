@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/admin.css">
+    <link rel="icon" type="image/png" href="public/image/tai_nguyen/logoweb.png">
+    <title>Smartphone Quân Râu</title>
+</head>
+
+<body>
+    <header>
+        <h1>TRANG QUẢN TRỊ CHO ĐIỆN THOẠI QR</h1>
+    </header>
+    <main>
+        <div class="add_item">
+            <h2>Thêm sản phẩm</h2>
+            <form action="" method="POST">
+                <label for="name">Tên sản phẩm:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="price">Bộ nhớ ():</label>
+                <input type="text" id="capacity" name="price" required>
+                <label for="price">Giá:</label>
+                <input type="number" id="price" name="price" required>
+                <label for="price">Chất lượng (A+/A/...):</label>
+                <input type="text" id="quality" name="price" required>
+                <label for="image">Link hình ảnh:</label>
+                <input type="text" id="image" name="image" accept=".jpg, .jpeg, .png" required>
+                <label for="description">Lưu ý:</label>
+                <textarea id="description" name="note" required></textarea>
+                <button type="submit">Thêm sản phẩm</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

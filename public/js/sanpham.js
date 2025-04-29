@@ -72,7 +72,6 @@ if (productId) {
         })
         .then(data => {
             const product = data.products[0];
-            // Hiển thị thông tin sản phẩm
             console.log('Thông tin sản phẩm:', product);
             titleElement.textContent = product.tensanpham;
             dmpath.textContent = pathdm;
@@ -80,7 +79,7 @@ if (productId) {
             const productcontent = document.getElementById('product_content');
             const productsmall = document.getElementById('product_list_small');
             function formatCurrency(amount) {
-                return Number(amount).toLocaleString("vi-VN"); // Định dạng giá theo tiền Việt Nam
+                return Number(amount).toLocaleString("vi-VN");
             }
             function renderProducts() {
                 productcontent.innerHTML = "";
@@ -89,7 +88,7 @@ if (productId) {
                 productDivleft.classList.add("product_content_left");
                 productDivleft.innerHTML = `
                 <div class="product_content_left_big_img">
-                        <img src="${product.src}" alt="${product.tensanpham}">
+                        <img src="${"public/image/" + product.src}" alt="${product.tensanpham}">
                     </div>
                 `;
                 productcontent.appendChild(productDivleft);
@@ -151,13 +150,13 @@ if (productId) {
                 };
                 productcontent.appendChild(productDivright);
                 productsmall.innerHTML = `
-                <img src="${product.src}" alt="Hình ảnh sản phẩm">
-                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
-                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
-                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
-                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
-                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
-                    <img src="${product.src}" alt="Hình ảnh sản phẩm">
+                <img src="${"public/image/" + product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${"public/image/" + product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${"public/image/" + product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${"public/image/" + product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${"public/image/" + product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${"public/image/" + product.src}" alt="Hình ảnh sản phẩm">
+                    <img src="${"public/image/" + product.src}" alt="Hình ảnh sản phẩm">
                     `;
             }
             renderProducts();

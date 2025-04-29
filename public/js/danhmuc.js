@@ -41,6 +41,7 @@ function getParameterByName(name, url) {
 // Lấy giá trị tham số
 var category = getParameterByName('category');
 var subcategory = getParameterByName('subcategory');
+var searchheader = getParameterByName('search');
 var http = "https://smartphonequanrau.kesug.com/api/";
 // Cập nhật tiêu đề
 var titleElement = document.getElementById('page-title');
@@ -53,6 +54,11 @@ if (subcategory) {
     titleElement.textContent = category; // Hiển thị danh mục chính nếu không có danh mục con
     let apiName = category.toLowerCase().replace(/\s+/g, "");
     http = http + apiName + ".php";
+    console.log(http);
+} else if (searchheader) {
+    titleElement.textContent = searchheader;
+    let apiName = searchheader.toLowerCase().replace(/\s+/g, "");
+    http = http + `search.php?search=${searchheader}`;
     console.log(http);
 } else {
     titleElement.textContent = 'Danh sách sản phẩm'; // Tiêu đề mặc định
@@ -146,7 +152,7 @@ fetch(http)
                     productDiv.setAttribute("data-id", product.id_sanpham);
                     productDiv.innerHTML = `
                         <div class="product_list_content_item_img" >
-                            <img src="${product.src}" alt="${product.tensanpham}">
+                            <img src="${"public/image/" + product.src}" alt="${product.tensanpham}">
                         </div>
                         <div class="product_list_content_item_info">
                             <p class="product_name">${product.tensanpham}</p>
