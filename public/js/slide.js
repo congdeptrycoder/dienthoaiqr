@@ -141,24 +141,3 @@ document.querySelectorAll('.slide_sanpham_sale_content_item').forEach(item => {
     })
 })
 // Thêm vào cuối file
-
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
-
-    menuToggle.addEventListener("click", function () {
-        menu.classList.toggle("active"); // Thêm/xóa class 'active' để hiện/ẩn menu
-    });
-
-    // Xử lý submenu (nếu muốn bật/tắt bằng cách nhấn)
-    const menuItems = document.querySelectorAll(".menu > li");
-    menuItems.forEach(item => {
-        item.addEventListener("click", function (e) {
-            const submenu = item.querySelector(".submenu");
-            if (submenu) {
-
-                submenu.classList.toggle("active"); // Bật/tắt submenu
-            }
-        });
-    });
-});
